@@ -2,7 +2,6 @@
 
 (load custom-file)
 
-
 (require 'package)
 
 (add-to-list 'package-archives
@@ -65,7 +64,7 @@
 (defun replace-word (x)
   (interactive "p") 
   (kill-word x)
-  (modalka-mode 1))
+  (modalka-mode 0))
 
 (modalka-define-kbd "e" "C-e")
 
@@ -237,7 +236,7 @@
 (use-package company
   :hook (prog-mode . company-mode))
 
-(use-package linum-relative :ensure t :init (linum-relative-global-mode))
+(use-package linum-relative :ensure t :config (linum-relative-global-mode))
 
 (setq-default indent-tabs-mode nil)
 

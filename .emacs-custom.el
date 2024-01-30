@@ -20,7 +20,7 @@
  '(initial-buffer-choice t)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
+   '(window-number elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
