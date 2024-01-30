@@ -23,8 +23,6 @@
 
 (setq ido-enable-flex-matching t) (setq ido-everywhere t) (ido-mode 1)
 
-(set-message-beep 'silent)
-
 (use-package modalka :ensure t)
 
 (modalka-global-mode)
