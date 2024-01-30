@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "wheat" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "outline " :family "consolas"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "wheat" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(mode-line ((t (:background "#a9b7c6" :foreground "#3c3f41" :inverse-video t :box nil :underline nil :slant normal :weight normal))))
  '(mode-line-inactive ((t (:inherit mode-line :background "#89a7a6" :foreground "#3c3f31" :inverse-video t :box nil :underline nil :slant normal :weight normal)))))
 
