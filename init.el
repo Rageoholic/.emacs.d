@@ -48,6 +48,7 @@
   (backward-char))
 
 (global-set-key (kbd "M-<f4>") #'save-buffers-kill-terminal)
+(global-set-key (kbd "C-z") nil)
 
 (global-set-key (kbd "ESC M-d") #'replace-word) 
 
