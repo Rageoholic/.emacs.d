@@ -36,6 +36,7 @@
 (add-to-list 'modalka-excluded-modes 'calc-mode)
 (add-to-list 'modalka-excluded-modes 'slime-repl-mode)
 (add-to-list 'modalka-excluded-modes 'cider-repl-mode)
+(add-to-list 'modalka-excluded-modes 'magit-mode)
 
 (defun replace-character-at-point (character)
   (interactive  "cReplacement Character") 
