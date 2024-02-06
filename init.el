@@ -2,6 +2,12 @@
 
 (load custom-file)
 
+
+; Machine specific setup can go in this file.
+(setq local-setup "~/.emacs.d/local-setup.el")
+
+(if (file-exists-p local-setup) (load local-setup))
+
 (require 'package)
 
 (add-to-list 'package-archives
@@ -37,6 +43,7 @@
 (add-to-list 'modalka-excluded-modes 'slime-repl-mode)
 (add-to-list 'modalka-excluded-modes 'cider-repl-mode)
 (add-to-list 'modalka-excluded-modes 'magit-mode)
+(add-to-list 'modalka-excluded-modes 'dired-mode)
 
 (defun replace-character-at-point (character)
   (interactive  "cReplacement Character") 
@@ -259,3 +266,9 @@
   :ensure t
   :init
   (elpy-enable))
+
+; Machine specific setup goes in this file. This file is not checked
+; into git
+(setq local-setup "~/.emacs.d/local-setup.el")
+
+(if (file-exists-p local-setup) (load local-setup))
