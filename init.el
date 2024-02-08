@@ -2,7 +2,6 @@
 
 (load custom-file)
 
-
 ; Machine specific setup can go in this file.
 (setq local-setup "~/.emacs.d/local-setup.el")
 
@@ -234,18 +233,21 @@
 
 ;;; Put paredit on all lisp modes
 (use-package paredit 
-  :ensure t 
+  :ensure t :demand t
   :hook
   (lisp-mode . paredit-mode) (emacs-lisp-mode . paredit-mode)
   (ielm-mode . paredit-mode) (lisp-interaction-mode . paredit-mode)
- (scheme-mode . paredit-mode)
+ (scheme-mode . paredit-mode) (dune-mode . paredit-mode)
  :init
  (add-hook 'eval-expression-minibuffer-setup-hook 'paredit-mode))
 
+ (define-key paredit-mode-map (kbd "RET") nil)
 
 
 (use-package company
   :hook (prog-mode . company-mode))
+
+(global-set-key (kbd "M-i") 'complete-symbol)
 
 (use-package linum-relative :ensure t :config (linum-relative-global-mode))
 
@@ -272,3 +274,5 @@
 (setq local-setup "~/.emacs.d/local-setup.el")
 
 (if (file-exists-p local-setup) (load local-setup))
+
+(use-package merlin :ensure t :hook (tuareg-mode . merlin-mode))
