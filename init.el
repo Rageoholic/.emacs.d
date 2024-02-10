@@ -54,6 +54,17 @@
   (insert character)
   (backward-char))
 
+(defun insert-line-above (arg) 
+  (interactive "P") 
+  (move-beginning-of-line 1)
+
+  (let ((iter-count (if (numberp arg) arg 1)))
+    (dotimes (unused iter-count)
+      (insert "\n")
+      (backward-char)))
+  (modalka-mode 0))
+
+
 (global-set-key (kbd "M-<f4>") #'save-buffers-kill-terminal)
 (global-set-key (kbd "C-z") nil)
 
@@ -67,6 +78,9 @@
 
 (global-set-key (kbd "<f5>") 'compile)
 (global-set-key (kbd "<f6>") 'recompile)
+
+(global-set-key (kbd "C-o") 'insert-line-above)
+
 (modalka-define-kbd "p" "C-p")
 
 (modalka-define-kbd "a" "C-a")
