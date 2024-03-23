@@ -16,11 +16,13 @@
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(custom-safe-themes
    '("3f1dcd824a683e0ab194b3a1daac18a923eed4dba5269eecb050c718ab4d5a26" default))
+ '(haskell-process-type 'stack-ghci)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
+ '(lsp-keymap-prefix "M-l")
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(merlin ocamlformat utop dune window-number elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
+   '(fsharp-mode flycheck lean4-mode which-key dap-mode yaml-mode merlin ocamlformat utop dune window-number elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))

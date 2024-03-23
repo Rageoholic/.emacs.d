@@ -43,6 +43,7 @@
 (add-to-list 'modalka-excluded-modes 'cider-repl-mode)
 (add-to-list 'modalka-excluded-modes 'magit-mode)
 (add-to-list 'modalka-excluded-modes 'dired-mode)
+(add-to-list 'modalka-excluded-modes 'haskell-error-mode)
 
 (defun replace-character-at-point (character)
   (interactive  "cReplacement Character") 
@@ -223,7 +224,9 @@
               ("C-c C-c r" . lsp-rename)
               ("C-c C-c q" . lsp-workspace-restart)
               ("C-c C-c Q" . lsp-workspace-shutdown)
-              ("C-c C-c s" . lsp-rust-analyzer-status))
+              ("C-c C-c s" . lsp-rust-analyzer-status)
+              ("<f5>" . rustic-cargo-build)
+              ("<f7>" . rustic-cargo-run))
   :config
   ;; uncomment for less flashiness
   ;; (setq lsp-eldoc-hook nil)
@@ -276,6 +279,24 @@
 
 ;;; Haskell setup
 (use-package haskell-mode :ensure t)
+(use-package lsp-mode
+  :ensure t
+  :hook (haskell-mode . lsp) (haskell-interactive-mode . company-mode)
+  :commands lsp
+  :config
+ (define-key lsp-mode-map (kbd "C-c C-l") lsp-command-map)
+ (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+(use-package lsp-haskell
+  :ensure t
+  :config
+ (setq lsp-haskell-server-path "haskell-language-server-wrapper")
+ (setq lsp-haskell-server-args ())
+   ;; Comment/uncomment this line to see interactions between lsp client/server.
+  (setq lsp-log-io t))
+
 
 ;;; Python setup
 (use-package elpy
@@ -290,3 +311,20 @@
 (if (file-exists-p local-setup) (load local-setup))
 
 (use-package merlin :ensure t :hook (tuareg-mode . merlin-mode))
+
+(use-package yasnippet :ensure t :hook (lsp-mode . yas-minor-mode))
+
+; Lean
+(setq load-path (cons "~/.emacs.d/submods/lean4-mode" load-path))
+
+(setq lean4-mode-required-packages '(dash f flycheck lsp-mode magit-section s))
+
+(let ((need-to-refresh t))
+  (dolist (p lean4-mode-required-packages)
+    (when (not (package-installed-p p))
+      (when need-to-refresh
+        (package-refresh-contents)
+        (setq need-to-refresh nil))
+      (package-install p))))
+
+(require 'lean4-mode)
