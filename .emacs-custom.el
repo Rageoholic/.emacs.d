@@ -22,7 +22,7 @@
  '(lsp-keymap-prefix "M-l")
  '(menu-bar-mode t)
  '(package-selected-packages
-   '(fsharp-mode flycheck lean4-mode which-key dap-mode yaml-mode merlin ocamlformat utop dune window-number elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
+   '(lsp-ui fsharp-mode flycheck lean4-mode which-key dap-mode yaml-mode merlin ocamlformat utop dune window-number elpy python-mode darcula-theme seq ripgrep linum-relative paredit-mode lsp-haskell haskell-mode yasnippet company lsp-mode rustic rust-mode use-package smartparens paredit modalka magit cmake-project cmake-mode))
  '(ring-bell-function 'ignore)
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
